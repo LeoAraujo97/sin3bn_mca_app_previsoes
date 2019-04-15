@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Previsao implements Serializable {
@@ -13,22 +14,19 @@ public class Previsao implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nomeDia;
 	private double temperaturaMinima;
 	private double temperaturaMaxima;
 	private int umidade;
 	private String Descricao;
+	
+	@OneToOne(mappedBy ="diaDaSemana", optional = false)
+	private DiasDaSemana diasDaSemana;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public String getNomeDia() {
-		return nomeDia;
-	}
-	public void setNomeDia(String nomeDia) {
-		this.nomeDia = nomeDia;
 	}
 	public double getTemperaturaMinima() {
 		return temperaturaMinima;
@@ -53,6 +51,12 @@ public class Previsao implements Serializable {
 	}
 	public void setDescricao(String descricao) {
 		Descricao = descricao;
+	}
+	public DiasDaSemana getDiasDaSemana() {
+		return diasDaSemana;
+	}
+	public void setDiasDaSemana(DiasDaSemana diasDaSemana) {
+		this.diasDaSemana = diasDaSemana;
 	}
 	
 	
