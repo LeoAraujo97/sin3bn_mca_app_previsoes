@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -18,6 +20,10 @@ public class Previsao implements Serializable {
 	private double temperaturaMaxima;
 	private int umidade;
 	private String Descricao;
+	
+	@ManyToOne
+	@JoinColumn(name="idCidade")
+	private Cidade cidade;
 	
 	@OneToOne(mappedBy ="diaDaSemana", optional = false)
 	private DiasDaSemana diasDaSemana;
