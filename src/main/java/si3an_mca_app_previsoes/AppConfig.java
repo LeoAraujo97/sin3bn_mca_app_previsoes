@@ -9,9 +9,9 @@ import si3an_mca_app_previsoes.interceptor.Interceptor;
 @Configuration
 public class AppConfig implements WebMvcConfigurer {
 
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new Interceptor()).addPathPatterns("/**").excludePathPatterns("/login", "/",
-				"/fazerLogin");
-	}
+//	@Override
+//	public void addInterceptors(InterceptorRegistry registry) {
+//		registry.addInterceptor(new Interceptor()).addPathPatterns("/**").excludePathPatterns("/login", "/",
+//				"/fazerLogin");
+//	}
 }

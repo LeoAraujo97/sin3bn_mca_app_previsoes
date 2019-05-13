@@ -12,11 +12,12 @@ import si3an_mca_app_previsoes.repository.PrevisaoRepository;
 public class PrevisaoService {
 	@Autowired
 	private PrevisaoRepository previsaoRepository;
-	
-	public void salvar (Previsao previsao) {
+
+	public void salvar(Previsao previsao) {
 		previsaoRepository.save(previsao);
-		}
-		public List <Previsao> listarTodos (){
+	}
+
+	public List<Previsao> listarTodos() {
 		return previsaoRepository.findAll();
-		}
+	}
 }

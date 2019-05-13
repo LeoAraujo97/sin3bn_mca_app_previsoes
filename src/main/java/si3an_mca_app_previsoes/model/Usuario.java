@@ -32,6 +32,7 @@ public class Usuario implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,5 +56,5 @@ public class Usuario implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-}
+	}
 }
